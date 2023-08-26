@@ -1,6 +1,6 @@
 body {
   font-family: 'Josefin Sans';
-  background-image: url('../src/assets/images/bg.jpg');
+  background: #A9AFB6;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
