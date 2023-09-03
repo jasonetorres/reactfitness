@@ -1,7 +1,7 @@
 import React, { useEffect, useState }from 'react';
 import { Box, Button, Stack, TextField, Typography } from '@mui/material';
 import { exerciseOptions, fetchData } from '../utils/fetchData';
-import HorizontalScrollBar  from '../components/HorizontalScrollBar';
+import HorizontalScrollBar from './HorizontalScrollBar';
 
 const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   const [ search, setSearch] = useState('')
@@ -55,7 +55,7 @@ useEffect(() => {
           borderRadius: '4px'
         }}
         height="76px"
-        value="search"
+        value={search}
         onChange={(e) => setSearch(e.target.value.toLowerCase())}
         placeholder='Search Exercises'
         type='text'
@@ -76,10 +76,7 @@ useEffect(() => {
        </Button>
       </Box>
       <Box sx={{ position:'relative', width:'100%', p:'20px'}}>
-          <HorizontalScrollBar data={bodyParts}
-          bodyPart={bodyPart} 
-          setBodyPart={setBodyPart}
-          isBodyParts={isBodyParts}/>
+          <HorizontalScrollBar data={bodyParts} bodyParts setBodyPart={setBodyPart} bodyPart={bodyPart} />
       </Box>
     </Stack>
   )
